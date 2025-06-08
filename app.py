@@ -1,5 +1,7 @@
 import os
 
+restaurantes = []
+
 def exibir_nome_do_programa():
     print("""
     Ｓａｂｏｒ Ｅｘｐｒｅｓｓ
@@ -20,13 +22,21 @@ def opcao_invalida():
     input('Pressione "enter" para voltar ao menu principal!')
     main()
 
+def cadastrar_novo_restaurante():
+    os.system('clear')
+    print('Cadastro de novos restaurantes')
+    nome_do_restaurante = input('Digite o nome do restaurante que deseja cadastrar: ')
+    restaurantes.append(nome_do_restaurante)
+    print(f'O restaurante {nome_do_restaurante} foi cadastrado com sucesso!\n')
+    input('Pressione "enter" para voltar ao menu principal!')
+    main()
 
 def escolher_opcao():
     try:
         opcao_escolhida = int(input('Escolha uma opção: '))
 
         if opcao_escolhida == 1:
-            print('Cadastrar restaurante')
+            cadastrar_novo_restaurante()
         elif opcao_escolhida == 2:
             print('Listar restaurante')
         elif opcao_escolhida == 3:
